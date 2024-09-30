@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average of Digits Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: left;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Average of Digits Calculator</h1>
+
+    <p>Enter a number:</p>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button onclick="calculateAverage()">Calculate Average of Digits</button>
+
+    <div class="output">
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculateAverage() {
+            let number = document.getElementById('numberInput').value;
+
+            let numberString = number.toString();
+
+            let sum = 0;
+            let count = 0;
+
+            for (let i = 0; i < numberString.length; i++) {
+                sum += parseInt(numberString[i]);
+                count++;
+            }
+
+            let average = sum / count;
+
+            document.getElementById('result').innerHTML = "The average of digits is " + average;
+        }
+    </script>
+
+</body>
+</html>

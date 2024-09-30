@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuboid Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: left;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Cuboid Surface Area and Volume</h1>
+
+    <p>Given dimensions of a cuboid:</p>
+    <ul>
+        <li>Length: 10.4</li>
+        <li>Width: 13.5</li>
+        <li>Height: 8.2</li>
+    </ul>
+
+    <div class="output">
+        <p id="surfaceArea"></p>
+        <p id="volume"></p>
+    </div>
+
+    <script>
+        let length = 10.4;
+        let width = 13.5;
+        let height = 8.2;
+
+        let surfaceArea = 2 * (length * width + length * height + width * height);
+
+        let volume = length * width * height;
+
+        document.getElementById('surfaceArea').innerHTML = "Surface Area: " + surfaceArea.toFixed(2);
+        document.getElementById('volume').innerHTML = "Volume: " + volume.toFixed(2);
+    </script>
+
+</body>
+</html>

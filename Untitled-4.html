@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter Grade Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: left;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Letter Grade Calculator</h1>
+
+    <p>Enter your numeric score:</p>
+    <input type="number" id="scoreInput" placeholder="Enter score">
+    <button onclick="calculateGrade()">Get Letter Grade</button>
+
+    <div class="output">
+        <p id="grade"></p>
+    </div>
+
+    <script>
+        function calculateGrade() {
+            let score = document.getElementById('scoreInput').value;
+
+            let grade;
+
+            if (score >= 90) {
+                grade = 'A';
+            } else if (score >= 80) {
+                grade = 'B';
+            } else if (score >= 70) {
+                grade = 'C';
+            } else if (score >= 60) {
+                grade = 'D';
+            } else {
+                grade = 'F';
+            }
+
+            document.getElementById('grade').innerHTML = "Your grade is: " + grade;
+        }
+    </script>
+
+</body>
+</html>

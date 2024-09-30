@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterate Through String</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: left;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>String Letter Iterator</h1>
+
+    <p>Enter a string:</p>
+    <input type="text" id="myString" placeholder="Type a word">
+    <button onclick="iterateString()">Print Letters</button>
+
+    <div class="output">
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function iterateString() {
+            let myString = document.getElementById('myString').value;
+            
+            let result = '';
+
+            for (let i = 0; i < myString.length; i++) {
+                result += myString[i] + '<br>';
+            }
+
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+
+</body>
+</html>

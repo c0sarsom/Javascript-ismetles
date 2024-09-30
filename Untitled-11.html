@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Letters Until Non-Letter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: left;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 18px;
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Print Letters Until Non-Letter</h1>
+
+    <p>Please enter a string:</p>
+    <input type="text" id="inputString" placeholder="Enter a string">
+    <button onclick="printLetters()">Print Letters</button>
+
+    <div class="output">
+        <pre id="result"></pre>
+    </div>
+
+    <script>
+        function printLetters() {
+            const inputString = document.getElementById('inputString').value;
+            let output = '';
+
+            for (let i = 0; i < inputString.length; i++) {
+                const char = inputString[i];
+
+                if (/^[a-zA-Z]$/.test(char)) {
+                    output += char + '\n'; 
+                } else {
+                    break; 
+                }
+            }
+
+            document.getElementById('result').textContent = output || "No letters found.";
+        }
+    </script>
+
+</body>
+</html>

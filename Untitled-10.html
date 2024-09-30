@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square with Diagonal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: left;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 18px;
+            white-space: pre; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Draw Square with Diagonal</h1>
+
+    <p>Please enter the square size:</p>
+    <input type="number" id="sizeInput" min="1" placeholder="Enter a size">
+    <button onclick="drawSquare()">Draw Square</button>
+
+    <div class="output">
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function drawSquare() {
+            let size = parseInt(document.getElementById('sizeInput').value);
+
+            let output = '';
+
+            for (let i = 0; i < size; i++) {
+                for (let j = 0; j < size; j++) {
+                    if (i === 0 || i === size - 1 || j === 0 || j === size - 1 || i === j) {
+                        output += '%';
+                    } else {
+                        output += ' '; 
+                    }
+                }
+                output += '\n'; 
+            }
+
+            document.getElementById('result').innerHTML = output;
+        }
+    </script>
+
+</body>
+</html>

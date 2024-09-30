@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: left;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 18px;
+            white-space: pre; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1>FizzBuzz Game</h1>
+    <p>Counting from 1 to 100:</p>
+    <button onclick="playFizzBuzz()">Play FizzBuzz</button>
+
+    <div class="output">
+        <pre id="result"></pre>
+    </div>
+
+    <script>
+        function playFizzBuzz() {
+            let output = '';
+
+            for (let i = 1; i <= 100; i++) {
+                if (i % 3 === 0 && i % 5 === 0) {
+                    output += 'fizzbuzz, ';
+                } else if (i % 3 === 0) {
+                    output += 'fizz, ';
+                } else if (i % 5 === 0) {
+                    output += 'buzz, ';
+                } else {
+                    output += i + ', ';
+                }
+            }
+
+            output = output.slice(0, -2);
+
+            document.getElementById('result').textContent = output;
+        }
+    </script>
+
+</body>
+</html>

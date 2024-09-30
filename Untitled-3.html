@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: left;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Body Mass Index (BMI) Calculator</h1>
+
+    <p>Mass (in kg): 81.2</p>
+    <p>Height (in meters): 1.78</p>
+
+    <div class="output">
+        <p id="bmi"></p>
+    </div>
+
+    <script>
+        let mass_in_kg = 81.2;
+        let height_in_m = 1.78;
+
+        let bmi = mass_in_kg / (height_in_m * height_in_m);
+
+        document.getElementById('bmi').innerHTML = "Your BMI is: " + bmi.toFixed(2);
+    </script>
+
+</body>
+</html>

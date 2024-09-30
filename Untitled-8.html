@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: left;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Factorial Calculator</h1>
+
+    <p>Enter a number:</p>
+    <input type="number" id="numberInput" min="0" placeholder="Enter a number">
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+
+    <div class="output">
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculateFactorial() {
+            let number = parseInt(document.getElementById('numberInput').value);
+
+            let factorial = 1;
+
+            for (let i = 1; i <= number; i++) {
+                factorial *= i; 
+            }
+
+            document.getElementById('result').innerHTML = number + " factorial is " + factorial;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skip Numbers Divisible by 3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: left;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 18px;
+            white-space: pre; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Print Numbers from 1 to 100</h1>
+    <p>Skipping Numbers Divisible by 3 Based on Rules</p>
+    <button onclick="printNumbers()">Print Numbers</button>
+
+    <div class="output">
+        <pre id="result"></pre>
+    </div>
+
+    <script>
+        function printNumbers() {
+            let output = '';
+            let skipCount = 0; 
+            let totalCount = 0;
+
+            for (let i = 1; i <= 100; i++) {
+                if (i % 3 === 0) {
+                    skipCount++;
+
+                    if (skipCount === 1 || skipCount === 2 || skipCount === 3) {
+                        continue; 
+                    }
+                }
+
+                output += i + (totalCount < 99 - skipCount ? ', ' : ''); 
+                totalCount++; 
+            }
+
+            document.getElementById('result').textContent = output;
+        }
+    </script>
+
+</body>
+</html>
